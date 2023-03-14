@@ -1,0 +1,128 @@
+/* Configurações gerais*/
+*{
+      padding:0;
+      margin: 0;
+      box-sizing: border-box;
+}
+.struture-body{
+      background-color: rgba(149, 167, 255, 0.475);
+}
+
+
+/* cabecario abrange titulo, barra de pesquisa e icones*/
+.header-page {
+      display: flex;
+      flex-direction: row;
+      background-color:white;
+      padding: 0 0 5% 0;
+}
+
+/*Titulo do cabecario "My company*/
+.title{
+      flex-grow: 1.5;
+}
+/* Conten titulo, input e span*/
+.label-busca{
+      flex-grow: 2;
+}
+
+.label-busca > img{
+      border: solid 1px black;
+      height: 28px;
+      border-collapse: collapse;
+      margin: 0 2% 0 2%;
+      border-radius: 30px;
+      padding: 5px;
+     
+}
+/* Conten onde o mesmo fica dentro do label-busca  input */
+.label-busca > input {
+      width: 500px;
+      margin: 1% 0;
+      border-radius:15px;
+}
+/* Conten titulo, input e span*/
+.title,.label-busca{
+      margin: 2%;
+}
+
+/* Conteudo da pagina contem uma lista de filtro e lista de produtos*/
+
+.struture-list{
+      display: flex; 
+}
+
+
+/*filtros */
+.filters-list{
+      margin: 2% 5%;
+}
+/* lista com checkebox dos itens  */
+
+.itens-list{
+
+      list-style-type: none;
+      margin: 1% 2%;
+}
+/* Conteudo da pagina contem uma lista de filtro e lista de produtos*/
+
+
+.list-product{
+      display: flex;
+      
+      flex-wrap: wrap;
+}
+
+.list-product > div{
+      padding: 1%;
+      width: 310px;
+      background-color: white;
+      margin: 1%;
+      
+      
+}
+
+
+.list-product > div > p{
+      font-size: 12px;
+      width: 280px;
+}
+.list-product > div > img{
+      height: 150px;
+      width: 250px;
+}
+
+.list-product > div > p,.list-product > div > img,.list-product > div > h1{
+      margin: 2%;
+      
+
+}
+.list-product > div > button{
+      visibility: hidden;
+      margin: 2% 14%;
+      transition: 100ms;
+}
+
+.list-product > div:hover >button{
+      visibility:visible;
+      margin: 2% 14%;
+      transition: 1s;
+      
+}
+.button-desing {
+      background-color: rgb(70, 17, 150);
+      color: white;
+      padding: 2%;
+      font-size: 20px;
+      border: solid 1px black;
+      border-radius: 5px;
+      transition: 1s;
+      
+}
+
+
+
+
+
+
+
