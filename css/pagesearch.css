@@ -4,8 +4,21 @@
       margin: 0;
       box-sizing: border-box;
 }
+/* Configurações Adicionadas para todos os li*/
+
+li{
+      list-style-type: none;;
+}
+/* Configurações de toda a pagina do body*/
+
 .struture-body{
       background-color: rgba(149, 167, 255, 0.475);
+}
+#visible{
+      visibility: visible;
+}
+#not-visible{
+      visibility: hidden;
 }
 
 
@@ -14,110 +27,227 @@
       display: flex;
       flex-direction: row;
       background-color:white;
-      padding: 0 0 5% 0;
+      width: 100vw;
+      
 }
 
 /*Titulo do cabecario "My company*/
 .title{
       flex-grow: 1.5;
+      margin: 2% 0;
+      color: rgb(124, 41, 202);
+      font-weight: 1000;
+      font-size:larger;
 }
 /* Conten titulo, input e span*/
 .label-busca{
       flex-grow: 2;
-}
-
-.label-busca > img{
-      border: solid 1px black;
-      height: 28px;
       border-collapse: collapse;
-      margin: 0 2% 0 2%;
-      border-radius: 30px;
-      padding: 5px;
+
+}
+/* Configurações parte de busca gerais da pagina referenciado o icone de dentro dela*/
+
+.label-busca > button{
+      height: 26px;
+      width: 26px;
+      border-radius: 10px;
+      margin: 0 0 0 480px;
+      border: solid rgba(236, 236, 236, 0) 1px;
+      z-index: 100;
+      position: relative;
+      
      
 }
+.label-busca > button:hover{
+      background-color: white;
+}
+
+
+
+
+
 /* Conten onde o mesmo fica dentro do label-busca  input */
 .label-busca > input {
       width: 500px;
-      margin: 1% 0;
+      height: 25px;
+      border: solid rgba(0, 0, 0, 0.268) 1px;
       border-radius:15px;
+      position:absolute;
+      padding: 0 0 0 1%;
+      z-index: 10;
 }
+input:focus{
+      box-shadow: 0 0 0 0;
+      outline: 0;
+}
+
 /* Conten titulo, input e span*/
-.title,.label-busca{
+.label-busca,.icon{
       margin: 2%;
 }
+
 
 /* Conteudo da pagina contem uma lista de filtro e lista de produtos*/
 
 .struture-list{
       display: flex; 
+      margin: 0 2.5%;
+
 }
-
-
 /*filtros */
 .filters-list{
-      margin: 2% 5%;
+      margin: 2% 0 0 2%;
+      flex-basis: 10%
+
 }
 /* lista com checkebox dos itens  */
-
 .itens-list{
-
       list-style-type: none;
-      margin: 1% 2%;
+      margin: 1% 1%;
+      padding: 2% 5%;
 }
 /* Conteudo da pagina contem uma lista de filtro e lista de produtos*/
-
-
 .list-product{
       display: flex;
-      
       flex-wrap: wrap;
+      flex-basis: 80%;
+      padding: 2%;
 }
+/* Lista de produtos div seria cada bloco que contem cada produto e suas especificaçoes*/
+
 
 .list-product > div{
-      padding: 1%;
-      width: 310px;
+      width: 255px;
+      height: 400px;
       background-color: white;
-      margin: 1%;
-      
-      
+      margin: 3% 0 0 0.4vw;
+      flex-basis: 320px;
+      position: relative;
+}
+
+/*Lista de produtos, essa parte se referencia aos texto de cada produto*/
+
+
+.list-product > div > .center > img{
+      height: 200px;
+      max-width: 300px;
+
 }
 
 
-.list-product > div > p{
-      font-size: 12px;
-      width: 280px;
-}
-.list-product > div > img{
-      height: 150px;
-      width: 250px;
-}
 
-.list-product > div > p,.list-product > div > img,.list-product > div > h1{
+.list-product > div > img,.list-product > div > h1{
       margin: 2%;
-      
+}
 
-}
-.list-product > div > button{
-      visibility: hidden;
-      margin: 2% 14%;
-      transition: 100ms;
-}
 
 .list-product > div:hover >button{
       visibility:visible;
-      margin: 2% 14%;
-      transition: 1s;
-      
 }
+.list-product > div:hover{
+      box-shadow: 1px 5px rgba(0, 0, 0, 0.186);
+
+}
+
 .button-desing {
       background-color: rgb(70, 17, 150);
       color: white;
-      padding: 2%;
-      font-size: 20px;
       border: solid 1px black;
       border-radius: 5px;
-      transition: 1s;
+      padding: 3% 16%; 
+      position: absolute;
+      margin: 2% 0 2% 8%;
+      font-size: 16px;
+      font-weight:750 ;
+      visibility: hidden;
+
+}
+
+
+.button-main{
+      background-color: white;
+      width: 200px;
+      height: 60px;
+      padding: 9% 10%;
+      margin: 3% 0;
+      display: flex;
+      justify-content: space-between;
+}
+
+
+.button-main:hover{
+      box-shadow: 2px 2px grey;
+}
+
+.button-main > label{
+      font-weight: 600;
+}
+.button-main > input{
+}
+
+
+.preco{
+      width: 50px;
+      padding: 0 0 0 20px;
+}
+.block > p{
+      margin: 0 2%;
+}
+/*icones*/
+.truck{
+      height: 16px;
+}
+
+.icon{
+      height: 40px;
+      width: 50px;
+     
+}
+
+/* Formatacao de textos e titulos*/
+/* center utilizado para centralizar um conteudo mas usado especificamente para img*/
+.center{
+      width: 100%;
+      text-align: center;
+}
+.pdesconto{
+      font-size: 14px;
+      margin: 5%;
+      font-style: italic;
+      color: gray;
+}
+
+.pentrega{
+      color: rgb(1, 152, 1);
+}
+/*descrição do produto*/
+.pdescricao{
+      text-align: justify;
+      width: 300px;
+      height: 80px;
+     
+
+}
+
+.ppreco{
+      font-size: 24px;
+      color: green;
+
+}
+
+
+
+.block:hover #idpdescricao{
+      height: 0px;
+      transition: 10ms;
+      visibility: hidden;
+
       
+}
+.block:hover .ppreco{
+      background: -webkit-linear-gradient(green,#eee);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
 }
 
 

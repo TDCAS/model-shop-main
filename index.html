@@ -9,85 +9,69 @@
 </head>
 <body class="struture-body">
       <header class="header-page">
-            <div class="title">My compani</div>
+            <div class="title">My Company</div>
             
             <label class="label-busca" >
                   <div>buscar produtos</div>
-                  <input type="search">
-                  <img src="./img/lupa-de-detetive.png" " alt="">
+                  <input type="search" id="search-input">
+                  <button><img src="./img/icons/lupa-de-detetive.png" height="18px" width="18px"   alt=""></button>
             </label>
             
-            <img class="icon" src="./img/carrinholoja.jpg" height="50px" width="50px" alt="">
+            <img class="icon" src="./img/icons/carrinholoja.jpg" height="50px" width="50px" alt="">
             
       </header>
       <section class="struture-list" >
-            <aside class="filters-list" >
-                  <div>
+            <main class="filters-list" >
+                  <div class="button-main">
                         <label >Promoção</label>
                         <input type="checkbox">
 
                   </div>
-                  <div>
+                  <div class="button-main">
                         <label >Frete gratis</label>
                         <input type="checkbox">
 
                   </div>
                   
-                  <h1>Marca</h1>
+                  <h1>Marcas</h1>
                   <ul class="itens-list">
-                        <li>Reddragon</li>
-                        <li>Reddragon</li>
-                        <li>Reddragon</li>
-                        <li>Reddragon</li>
-                        <li>Reddragon</li>
+                        <li><input type="checkbox"> Evga</li>
+                        <li><input type="checkbox"> Redgragon</li>
+                        <li><input type="checkbox"> hyper fury</li>
+                        <li><input type="checkbox"> Other</li>
+                        <li><input type="checkbox"> Msi</li>
+                        <li><input type="checkbox"> Reddragon</li>
+                        <li><input type="checkbox"> Corsair</li>
+
                   </ul>
-            </aside>
-
-            <div class="list-product">
+                  <h1>Condição</h1>
+                  <ul class="itens-list" >
+                        <li><input type="checkbox"> Semi</li>
+                        <li><input type="checkbox"> New</li>
+                  </ul>
+                  <h1>Categorias</h1>
+                  <ul class="itens-list">
+                        <li><input type="checkbox"> Placa de video</li>
+                        <li><input type="checkbox"> Teclado</li>
+                        <li><input type="checkbox"> Headset</li>
+                        <li><input type="checkbox"> Jogo</li>
+                  </ul>
+                  <h1>Preço</h1>
                   <div>
-                        <img src="https://m.media-amazon.com/images/I/71cngLX2xuL._AC_SX679_.jpg" alt="">
-
-                        <h1>Reddragon</h1>
-                        <p>asdjisaod</p>
-                        <p>sjaidhla</p>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum, vero vel modi similique dolore culpa aperiam cum at, </p>
-                        <button>Adicionar ao carrinho</button>
-
+                        <input class="preco" type="text" placeholder="0"> à <input class="preco" type="text" placeholder="600">
                   </div>
-                  <div>
-                        <img src="https://m.media-amazon.com/images/I/71cngLX2xuL._AC_SX679_.jpg" alt="">
 
-                        <h1>Reddragon</h1>
-                        <p>asdjisaod</p>
-                        <p>sjaidhla</p>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum, vero vel modi similique dolore culpa aperiam cum at, </p>
-                        <button>Adicionar ao carrinho</button>
-
+            </main>
+            <aside >
+                  <div id="list-product-all" class="list-product">
+                        
                   </div>
-                  <div>
-                        <img src="https://m.media-amazon.com/images/I/71cngLX2xuL._AC_SX679_.jpg" alt="">
 
-                        <h1>Reddragon</h1>
-                        <p>asdjisaod</p>
-                        <p>sjaidhla</p>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum, vero vel modi similique dolore culpa aperiam cum at, </p>
-                        <button>Adicionar ao carrinho</button>
-
-                  </div>
-                  <div>
-                        <img src="https://m.media-amazon.com/images/I/71cngLX2xuL._AC_SX679_.jpg" alt="">
-
-                        <h1>Reddragon</h1>
-                        <p>asdjisaod</p>
-                        <p>sjaidhla</p>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum, vero vel modi similique dolore culpa aperiam cum at, </p>
-                        <button class="button-desing ">Adicionar ao carrinho</button>
-
-                  </div>
             
-            </div>
+            </aside>
 
             
       </section>
+      <script src="./js/script.js"></script>
 </body>
 </html>
