@@ -4,6 +4,9 @@
       margin: 0;
       box-sizing: border-box;
 }
+
+
+body {font-family: Arial, Helvetica, sans-serif;}
 /* Configurações Adicionadas para todos os li*/
 
 li{
@@ -22,6 +25,100 @@ li{
 }
 
 
+
+
+/* icone de carrinho  */
+.icon:after {
+      mix-blend-mode: overlay;
+}
+      
+header > button:hover{
+      background-color: blueviolet;
+      
+}
+
+
+header  >  button{
+      margin: 3% 2% 0 0;
+      height: 28px;
+      border: solid transparent;
+      border-radius: 14px; 
+
+}
+
+/* bloco que contera a lista de itens do carrinho */
+.block-list-cart{
+      visibility: hidden;
+      margin: 3% 79%;
+      border-radius: 7px;
+      min-height: 30px;
+      width: 270px;
+      position: absolute;
+      background-color: rgb(208, 216, 255)
+
+}
+
+.sair > button{
+      background-color: red;
+      color: wheat;
+      width: 15px;
+      font-size: 12px;
+      height: 15px;
+      border: solid 1px red;
+      border-radius: 15px;
+      padding: 0 0 0 30% 0;
+      float: right;
+    
+
+}
+/* cada item da lista do cattinho */
+.itens-list-cart{
+      display: flex;
+      justify-content: space-around;
+      height: 60px;
+      width: 242px;
+      background-color: rgb(255, 255, 255);
+      border-radius: 7px;
+      margin: 5%;
+
+
+}
+
+.itens-list-cart > div{
+      height: 50px;
+      width: 150px;
+      text-align:center;
+      
+
+      
+}
+
+.cli{
+      height: 18px;
+      width: 20px;
+      background-color: red;
+      color: #eee;
+      border: red 1px solid;
+      border-radius: 15px;
+
+}
+.cli:hover{
+      background-color: rgb(168, 0, 0);
+      border: rgb(168, 0, 0) 1px solid;
+
+     
+}
+.itens-list-cart > div > img{
+      margin: 5%;
+      height: 45px;
+      max-width: 100px;
+      text-align: center;
+}
+.button-carrinho{
+      margin: 2% 2% 0 0;
+      height: 50px;
+      width: 50px;
+}
 /* cabecario abrange titulo, barra de pesquisa e icones*/
 .header-page {
       display: flex;
@@ -31,10 +128,11 @@ li{
       
 }
 
+
 /*Titulo do cabecario "My company*/
 .title{
       flex-grow: 1.5;
-      margin: 2% 0;
+      margin: 2% 1%;
       color: rgb(124, 41, 202);
       font-weight: 1000;
       font-size:larger;
@@ -53,12 +151,11 @@ li{
       border-radius: 10px;
       margin: 0 0 0 480px;
       border: solid rgba(236, 236, 236, 0) 1px;
-      z-index: 100;
       position: relative;
       
      
 }
-.label-busca > button:hover{
+.button-search:hover{
       background-color: white;
 }
 
@@ -67,16 +164,15 @@ li{
 
 
 /* Conten onde o mesmo fica dentro do label-busca  input */
-.label-busca > input {
+.search-input {
       width: 500px;
       height: 25px;
       border: solid rgba(0, 0, 0, 0.268) 1px;
       border-radius:15px;
       position:absolute;
       padding: 0 0 0 1%;
-      z-index: 10;
 }
-input:focus{
+.search-input:focus{
       box-shadow: 0 0 0 0;
       outline: 0;
 }
@@ -90,65 +186,73 @@ input:focus{
 /* Conteudo da pagina contem uma lista de filtro e lista de produtos*/
 
 .struture-list{
-      display: flex; 
-      margin: 0 2.5%;
+      display: flex;
+      margin: 0 0 5% 0;
+      
 
 }
 /*filtros */
 .filters-list{
       margin: 2% 0 0 2%;
-      flex-basis: 10%
 
 }
 /* lista com checkebox dos itens  */
 .itens-list{
       list-style-type: none;
-      margin: 1% 1%;
-      padding: 2% 5%;
 }
 /* Conteudo da pagina contem uma lista de filtro e lista de produtos*/
 .list-product{
       display: flex;
       flex-wrap: wrap;
-      flex-basis: 80%;
-      padding: 2%;
+      z-index: 80;
+      padding: 2% 4%;
 }
 /* Lista de produtos div seria cada bloco que contem cada produto e suas especificaçoes*/
-
-
-.list-product > div{
-      width: 255px;
+/* bloco de cada produto, contem (img,nome,desconto,preço,fretegratis,fescricao e button )*/
+.block{
+      width: 300px;
       height: 400px;
       background-color: white;
-      margin: 3% 0 0 0.4vw;
-      flex-basis: 320px;
       position: relative;
+      margin: 1vh 0.5vw;
+      z-index: 100;
 }
 
-/*Lista de produtos, essa parte se referencia aos texto de cada produto*/
+.block:hover{
+      box-shadow: 1px 5px rgba(0, 0, 0, 0.186);
+}
+
+.block:hover #idpdescricao{
+      height: 0px;
+      transition: 10ms;
+      visibility: hidden;
+
+      
+}
+.block:hover .ppreco{
+      background: -webkit-linear-gradient(green,#eee);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+}
 
 
-.list-product > div > .center > img{
+
+
+
+
+
+
+
+/* imagem de cada p */
+.product-image{
       height: 200px;
       max-width: 300px;
 
 }
 
-
-
-.list-product > div > img,.list-product > div > h1{
-      margin: 2%;
-}
-
-
-.list-product > div:hover >button{
+.list-product > div:hover > .button-desing{
       visibility:visible;
 }
-.list-product > div:hover{
-      box-shadow: 1px 5px rgba(0, 0, 0, 0.186);
-
-}
-
 .button-desing {
       background-color: rgb(70, 17, 150);
       color: white;
@@ -182,8 +286,6 @@ input:focus{
 .button-main > label{
       font-weight: 600;
 }
-.button-main > input{
-}
 
 
 .preco{
@@ -205,6 +307,10 @@ input:focus{
 }
 
 /* Formatacao de textos e titulos*/
+
+.font-name-cart { 
+      font-size: 12px;
+}
 /* center utilizado para centralizar um conteudo mas usado especificamente para img*/
 .center{
       width: 100%;
@@ -237,22 +343,33 @@ input:focus{
 
 
 
-.block:hover #idpdescricao{
-      height: 0px;
-      transition: 10ms;
-      visibility: hidden;
 
-      
+
+
+/* The Modal (background) */
+.modal {
+      visibility:hidden;
+      left: 77vw;
+      top: 6vh;
+      position: absolute;
+      z-index: 100;
+      width: 280px;
+      border: solid rgb(208, 216, 255) 1px;
+      border-radius: 12px;
+      background-color: rgb(208, 216, 255);
+      min-height: 35px;
+
+
 }
-.block:hover .ppreco{
-      background: -webkit-linear-gradient(green,#eee);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+
+/* Modal Content */
+.modal-content {
+      background-color: rgb(208, 216, 255);
+
+
+
+
 }
 
-
-
-
-
-
+/* The Close Button */
 

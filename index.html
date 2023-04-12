@@ -7,54 +7,67 @@
       <link rel="stylesheet" href="./css/pagesearch.css">
       <title>My compani</title>
 </head>
-<body class="struture-body">
-      <header class="header-page">
+<body class="struture-body" >
+      <header class="header-page" id="pai">
             <div class="title">My Company</div>
             
             <label class="label-busca" >
                   <div>buscar produtos</div>
-                  <input type="search" id="search-input">
-                  <button><img src="./img/icons/lupa-de-detetive.png" height="18px" width="18px"   alt=""></button>
+                  <input type="search" class="search-input" placeholder="Qual item você procura?">
+                  <button class="button-search"><img src="./img/icons/lupa-de-detetive.png" height="18px" width="18px"   ></button>
             </label>
-            
-            <img class="icon" src="./img/icons/carrinholoja.jpg" height="50px" width="50px" alt="">
-            
+            <button id="header-button-icon" ><img id="header-image-icon" src="./img/icons/001-shopping-cart.png"  height="24x" width="24x" ></button>
+
+            <div id="myModal" class="modal">
+                  <div class="modal-content" id="modal-content-id">
+
+                  </div>
+            </div>
+   
+
+<!-- Trigger/Open The Modal -->
+
+
+<!-- The Modal -->
+
+
+
       </header>
-      <section class="struture-list" >
-            <main class="filters-list" >
+      <section class="struture-list" id="idStrutureListProduct"  >
+            <main class="filters-list" id="idFiltersList" >
                   <div class="button-main">
                         <label >Promoção</label>
-                        <input type="checkbox">
+                        <input type="checkbox" class="promocao">
 
                   </div>
                   <div class="button-main">
                         <label >Frete gratis</label>
-                        <input type="checkbox">
+                        <input type="checkbox" class="fretegratis">
 
                   </div>
                   
                   <h1>Marcas</h1>
                   <ul class="itens-list">
-                        <li><input type="checkbox"> Evga</li>
-                        <li><input type="checkbox"> Redgragon</li>
-                        <li><input type="checkbox"> hyper fury</li>
-                        <li><input type="checkbox"> Other</li>
-                        <li><input type="checkbox"> Msi</li>
-                        <li><input type="checkbox"> Reddragon</li>
-                        <li><input type="checkbox"> Corsair</li>
+                        <li><input type="checkbox" class="evga" placeholder="evga"> Evga</li>
+                        <li><input type="checkbox"class="redgragon" > Redgragon</li>
+                        <li><input type="checkbox"class="hyper fury"> hyper fury</li>
+                        <li><input type="checkbox"class="other"> Other</li>
+                        <li><input type="checkbox"class="msi"> Msi</li>
+                        <li><input type="checkbox"class="reddragon"> Reddragon</li>
+                        <li><input type="checkbox"class="corsair"> Corsair</li>
 
                   </ul>
                   <h1>Condição</h1>
                   <ul class="itens-list" >
-                        <li><input type="checkbox"> Semi</li>
-                        <li><input type="checkbox"> New</li>
+                        <li><input type="checkbox"class="semi"> Semi</li>
+                        <li><input type="checkbox"class="new"> New</li>
                   </ul>
                   <h1>Categorias</h1>
                   <ul class="itens-list">
-                        <li><input type="checkbox"> Placa de video</li>
-                        <li><input type="checkbox"> Teclado</li>
-                        <li><input type="checkbox"> Headset</li>
-                        <li><input type="checkbox"> Jogo</li>
+                        <li><input type="checkbox"class="placa de video"> Placa de video</li>
+                        <li><input type="checkbox"class="teclado"> Teclado</li>
+                        <li><input type="checkbox"class="headset"> Headset</li>
+                        <li><input type="checkbox"class="jogo"> Jogo</li>
                   </ul>
                   <h1>Preço</h1>
                   <div>
@@ -62,13 +75,11 @@
                   </div>
 
             </main>
-            <aside >
-                  <div id="list-product-all" class="list-product">
-                        
-                  </div>
+            <aside id="list-product-all" class="list-product">
 
-            
             </aside>
+
+          
 
             
       </section>
