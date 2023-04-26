@@ -11,7 +11,7 @@ let listproduct = `[
         "promocao":"",
         "categoria":"jogo",
         "fretegratis":"",
-        "preco":"200.00",
+        "preco":200,
         "entrega":"not-visible",
         "decricao":"descriscao"
     },
@@ -26,7 +26,7 @@ let listproduct = `[
         "promocao":"promocao",
         "quantidade":"1",
         "categoria":"teclado",
-        "preco":"200.00",
+        "preco":200,
         "entrega":"visible",
         "descricao":"descriscao"
     },
@@ -41,7 +41,7 @@ let listproduct = `[
         "promocao":"",
         "quantidade":"1",
         "fretegratis":"fretegratis",
-        "preco":"200.00",
+        "preco":200,
         "entrega":"visible",
         "descricao":"descriscao"
     },
@@ -56,7 +56,7 @@ let listproduct = `[
         "marca":"hyper fury",
         "categoria":"placa de video",
         "quantidade":"1",
-        "preco":"200.00",
+        "preco":200,
         "entrega":"not-visible",
         "descricao":"descriscao"
     },
@@ -71,7 +71,7 @@ let listproduct = `[
         "marca":"evga",
         "categoria":"jogo",
         "quantidade":"1",
-        "preco":"300.00",
+        "preco":300,
         "entrega":"not-visible",
         "descricao":"descriscao"
     },
@@ -86,7 +86,7 @@ let listproduct = `[
         "marca":"evga",
         "categoria":"jogo",
         "quantidade":"1",
-        "preco":"500.00",
+        "preco":500.00,
         "entrega":"visible",
         "descricao":"l"
     },
@@ -101,7 +101,7 @@ let listproduct = `[
         "marca":"evga",
         "quantidade":"1",
         "categoria":"placa de video",
-        "preco":"200.00",
+        "preco":200,
         "entrega":"not-visible",
         "descricao":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis placeat velit alias facere ex obcaecati?"
     }
@@ -109,17 +109,18 @@ let listproduct = `[
 
 //Crianção de variaveis para lista de produtos
 let containerHtml = document.getElementById("list-product-all")
-let searchInput = document.getElementById("search-input")
 //lista de todas as checkbox
-let checkboxlist = document.querySelectorAll(`input[type=checkbox]`)
 const myJson = JSON.parse(listproduct)
 let cont = 0
 let countListCart = 0
-let values = []
+let jsonPresentList = myJson
+
+
 // verificação se esta checado
 function verify(){
     let itens = 0;
     let values = []
+    let checkboxlist = document.querySelectorAll(`input[type=checkbox]:checked`)
 
     checkboxlist.forEach(element => {
         if(element.checked == true){
@@ -130,8 +131,8 @@ function verify(){
     if(itens > 0 ){
         query(values,itens)
     } else if(itens == 0){
-        render(myJson)
-        addcionaritem(myJson)
+        productRender(jsonPresentList)
+        addcionaritem(jsonPresentList)
         addEventListener('load',eventLitesner)
     }
 
@@ -144,8 +145,6 @@ function hasDuplicates(array) {
 
 
 function query(values,itens) {
-    console.log("element")
-
     cont = 0
     let list = []
     for(let one = 0;one < itens;one++){
@@ -174,16 +173,16 @@ function query(values,itens) {
             
         })
     }
-    render(hasDuplicates(list))
+    productRender(hasDuplicates(list))
     addcionaritem(hasDuplicates(list))
     addEventListener('load',eventLitesner)
 
 }
 //gera o lista de produtos html
-function render(myJson){
+function productRender(listproduct){
     containerHtml.innerHTML = ``
     let html = ``;
-    myJson.forEach(element => {     
+    listproduct.forEach(element => {     
         html += `
         <div class="block" id="${element.id}" >
             <div class="center">
@@ -195,12 +194,13 @@ function render(myJson){
                 <p class="pentrega" id="${element.entrega}" >Entrega gratis   <img class="truck"  src="./img/icons/caminhao.png"></p>
                 <button class="button-desing"  >Adicionar ao carrinho</button>
                 <div id="idpdescricao" class="pdescricao">
-                <p  >${element.descricao}</p>
+                <p  >${element.descricao}</p> 
             </div>
         </div>
         `
     });
     containerHtml.innerHTML = html
+    
 }
 // carrinho de compras
 //Variaveis
@@ -211,6 +211,7 @@ let block = document.querySelectorAll(`div[class="block"]`)
 let contentmodal = document.getElementById("modal-content-id")
 let divclas;
 let newlist = [];
+
 
 // visibilidade do container do carrinho onde guarda os produtos que estao no carrinho
 
@@ -245,6 +246,11 @@ function addcionaritem(myJson){
 //Add recebe o parametro que no mesmo contem um bloco html, apois isso adiciona essa variavel a uma lista, chamando o refilItens(newlist)
 //que recebe como parametro a lista de item, retornando o mesmo 
 function add(item){
+    newlist.forEach(element => {
+        if(element == item){
+            element
+        }
+    })
     newlist.push(item)
     refilItens(newlist) 
     return newlist
@@ -288,15 +294,77 @@ function removeItem(divid){
     }
 addEventListener('load',eventLitesner)
 
+function revilseach(searchbar){{    
+        
+            let box = document.getElementById("pai")
+            console.log(searchbar.value)
+            let lista = myJson.filter(element => {return (!element.name.search(searchbar.value))})
+            productRender(lista)
+            addcionaritem(lista)
+            addEventListener('load',eventLitesner)
+
+            console.log(lista)
+   
+    }
+}
+
+
+function priceRegulator(idPrecoMenor,idPrecoMaior){
+ 
+        let listNumber = myJson.filter(element => {return element.preco >= idPrecoMenor.value && element.preco <= idPrecoMaior.value })
+        
+        productRender(listNumber)
+        addcionaritem(listNumber)
+        addEventListener('load',eventLitesner)
+
+        console.log(listNumber)
+}
+
 function eventLitesner(){
 
-    console.log("enttrou")
     let headerButtonIcon = document.getElementById("header-button-icon")
     let headerImageIcon = document.getElementById("header-image-icon")
     let idFiltersList = document.getElementById("idFiltersList")
     let containerHtml = document.getElementById("list-product-all")
     let idStrutureListProduct = document.getElementById("idStrutureListProduct")
+    let searchbar = document.getElementById("idSearchInput")
+    let idPrecoMenor = document.getElementById("idPrecoMenor")
+    let idPrecoMaior = document.getElementById("idPrecoMaior")
 
+    idPrecoMenor.addEventListener("keypress",function(){
+        priceRegulator(idPrecoMenor,idPrecoMaior)
+    })
+    idPrecoMenor.addEventListener("keydown",function(){
+        priceRegulator(idPrecoMenor,idPrecoMaior)
+    })
+    idPrecoMenor.addEventListener("keyup",function(){
+        priceRegulator(idPrecoMenor,idPrecoMaior)
+    })
+    idPrecoMenor.addEventListener("click",function(){
+        priceRegulator(idPrecoMenor,idPrecoMaior)
+    })
+    idPrecoMaior.addEventListener("keypress",function(){
+        priceRegulator(idPrecoMenor,idPrecoMaior)
+    })
+    idPrecoMaior.addEventListener("keydown",function(){
+        priceRegulator(idPrecoMenor,idPrecoMaior)
+    })
+    idPrecoMaior.addEventListener("keyup",function(){
+        priceRegulator(idPrecoMenor,idPrecoMaior)
+    })
+    idPrecoMaior.addEventListener("click",function(){
+        priceRegulator(idPrecoMenor,idPrecoMaior)
+    })
+
+
+    searchbar.addEventListener("select",function(){revilseach(searchbar)})
+    searchbar.addEventListener("keypress",function(){revilseach(searchbar)})
+    searchbar.addEventListener("keydown",function(){revilseach(searchbar)})
+    searchbar.addEventListener("keyup",function(){revilseach(searchbar)})
+
+    
+
+    
     idFiltersList.addEventListener("click",verify)
     containerHtml.addEventListener('click',addcionaritem(myJson))
 
@@ -318,5 +386,13 @@ function eventLitesner(){
     headerButtonIcon.addEventListener("mouseout",()=>{
         headerImageIcon.src= `./img/icons/001-shopping-cart.png`;
     })
+
 }
-addEventListener('load',render(myJson))
+
+
+
+
+addEventListener('load',productRender(myJson))
+
+
+
