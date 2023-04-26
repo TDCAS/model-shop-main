@@ -1,3 +1,3 @@
 # model-shop-main
 
-![image](https://user-images.githubusercontent.com/53353680/225091211-5eb97c16-f1bd-4ad9-a0d9-36e0ca45239a.png)
+![image](https://user-images.githubusercontent.com/53353680/234647360-35772087-653e-4ab1-bc8e-28bd51dff0a9.png)
